@@ -1,0 +1,16 @@
+# action.yml
+name: "Hook"
+description: "Run hook plugins"
+inputs:
+  plugin-to-run: # id of input
+    description: "Name a plugin to launch"
+    required: true
+    default: "size"
+outputs:
+  time: # id of output
+    description: "The time plugin ran"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.plugin-to-run }}
