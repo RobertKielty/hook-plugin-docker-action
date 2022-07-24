@@ -2,6 +2,12 @@
 name: "Hook"
 description: "Run hook plugins"
 inputs:
+  hmac: # id of input
+    description: "HMAC secret"
+    required: true
+  gh-app-id-pivate-key: # id of input
+    description: "HMAC secret"
+    required: true
   plugin-to-run: # id of input
     description: "Name a plugin to launch"
     required: true
