@@ -1,22 +1,25 @@
 # action.yml
 name: "Hook"
-description: "Run hook plugins"
+description: "Runs test-infra hook (a custom build, that does not require k8s build infra) plugins"
 inputs:
   hmac: # id of input
     description: "HMAC secret"
     required: true
   gh-app-id-pivate-key: # id of input
-    description: "HMAC secret"
+    description: "GH App ID"
     required: true
-  plugin-to-run: # id of input
+  plugin: # id of input
     description: "Name a plugin to launch"
     required: true
     default: "size"
 outputs:
   time: # id of output
     description: "The time plugin ran"
+
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - ${{ inputs.hmac }}
+    - ${{ inputs.gh-app-id-private-key }}
     - ${{ inputs.plugin-to-run }}

@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-  MAINTAINER Robert Kielty <robk*ii.coop>
+  MAINTAINER Robert Kielty <robk@ii.coop>
 
 WORKDIR /hook
 
