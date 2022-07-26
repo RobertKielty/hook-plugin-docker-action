@@ -4,11 +4,13 @@ This action launches a hook instance with builtin plugins
 
 ## Inputs
 
-## `hmac` token sued by GitHub for validating webhooks
+## `hmac`
+token used by GitHub for validating webhooks
 
 **Required**
 
-## `private-key` RSA private key and app id created for the GitHub App.
+## `private-key`
+RSA private key and app id created for the GitHub App.
 
 **Required**
 
@@ -18,6 +20,4 @@ none
 
 ## Example usage
 
-uses: actions/hook@v1
-with:
-  plugin-to-run: 'blunderbuss'
+uses: actions/hook-plugin-docker-action@latest
