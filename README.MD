@@ -4,13 +4,13 @@ This action launches a hook instance with builtin plugins
 
 ## Inputs
 
-## `plugin-to-run`
+## `hmac` token sued by GitHub for validating webhooks
 
-**Required** The name of the plugin to launch. Default `size`.
+**Required**
 
-## `plugin-to-run`
+## `private-key` RSA private key and app id created for the GitHub App.
 
-**Required** The name of the plugin to launch. Default `size`.
+**Required**
 
 ## Outputs
 
