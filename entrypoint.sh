@@ -21,14 +21,17 @@ fi
 if [ "${PLUGIN_CONFIG}" != "" ]; then
     echo "${PLUGIN_CONFIG}" > ./plugins.yaml
 fi
-cd /hook
-echo "./hook\
+
+cd /hook || exit
+pwd
+echo "/hook/hook\
     --plugin ${PLUGIN_CONFIG} \
     --github-app-id 221150 \
     --hmac-secret-file ${HMAC_SECRET_FILENAME} \
     --github-app-private-key-path ${GH_APP_PRIVATE_KEY_PATH} \
     --config-path config.yaml --plugin-config plugins.yaml --dry-run=false"
-./hook\
+
+/hook/hook \
     --plugin-config "${PLUGIN_CONFIG}" \
     --github-app-id 221150 \
     --hmac-secret-file "${HMAC_SECRET_FILENAME}" \
