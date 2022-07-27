@@ -31,8 +31,7 @@ echo "/hook/hook\
     --github-app-private-key-path ${GH_APP_PRIVATE_KEY_PATH} \
     --config-path config.yaml --plugin-config plugins.yaml --dry-run=false"
 
-/hook/hook \
-    --plugin-config "${PLUGIN_CONFIG}" \
+/hook/hook --plugin-config "${PLUGIN_CONFIG}" \
     --github-app-id 221150 \
     --hmac-secret-file "${HMAC_SECRET_FILENAME}" \
     --github-app-private-key-path "${GH_APP_PRIVATE_KEY_PATH}" \
