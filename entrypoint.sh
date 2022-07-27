@@ -21,7 +21,7 @@ fi
 if [ "${PLUGIN_CONFIG}" != "" ]; then
     echo "${PLUGIN_CONFIG}" > ./plugins.yaml
 fi
-
+cd /hook
 echo "./hook\
     --plugin ${PLUGIN_CONFIG} \
     --github-app-id 221150 \
