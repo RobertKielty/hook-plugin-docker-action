@@ -20,4 +20,4 @@ none
 
 ## Example usage
 
-uses: actions/hook-plugin-docker-action@latest
+uses: RobertKielty/hook-plugin-docker-action@latest
