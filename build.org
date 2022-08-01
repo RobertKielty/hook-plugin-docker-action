@@ -1,0 +1,25 @@
+#+TITLE: Build
+* Build pipeline
+hacked hook on rob's fork of test-infra
+published to to ghcr.io
+[[https://github.com/users/RobertKielty/packages/container/package/test-infra%2Fhook-1eb1aded4295c31cc560eb5b2f39bd36][Packages]] is linked on that repo
+
+Rob's fork of hook has k8s infra setup stripped out of it.
+https://github.com/ii/ob-tmate
+
+#+begin_src tmate :session hpca-cntr-build
+export CR_PATH=$(cat ~/.github/.PAT)
+echo $CR_PAT | docker login ghcr.io -u RobertKielty --password-stdin
+docker build -t hpda:latest .
+#+end_src
+
+#+RESULTS:
+#+begin_example
+#+end_example
+
+There's no point in running this as a local container as
+the next step here is to get this *launched* from a github action.
+
+#+begin_src tmate :session hpca-cntr-build
+docker run hpda:latest hmac private-key
+#+end_src

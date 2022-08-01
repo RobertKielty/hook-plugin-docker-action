@@ -1,6 +1,3 @@
-FROM ubuntu:20.04
-  MAINTAINER Robert Kielty <robk@ii.coop>
-RUN apt update && apt install -y git
+FROM ghcr.io/robertkielty/test-infra/hook-1eb1aded4295c31cc560eb5b2f39bd36:latest
 COPY entrypoint.sh /entrypoint.sh
-COPY hook /hook
 ENTRYPOINT ["/entrypoint.sh"]
