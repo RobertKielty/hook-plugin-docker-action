@@ -1,15 +1,16 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Launch custom (no k8s infra) hook build* as a GH Action to run a prow plugin
 #
 # Input Params : HMAC, PK, HOOK_CONFIG, PLUGIN_CONFIG
 #
 
-HMAC_SECRET_FILENAME="$1"
-GH_APP_PRIVATE_KEY_PATH="$2"
+#HMAC_SECRET_FILENAME="$1"
+#GH_APP_PRIVATE_KEY_PATH="$2"
 HOOK_CONFIG="$3"
 PLUGIN_CONFIG="$4"
 
+echo "$0: Starting hook"
 #
 # HBD? Would have to consider whther or not to expose this capability
 # to Project Developers.
