@@ -11,7 +11,7 @@ GH_APP_PK="$3"
 PLUGIN="$4"
 
 HOOK_CONFIG="$5"
-PLUGIN_CONFIG="$5"
+PLUGIN_CONFIG="$6"
 
 PKEY_FILE="./pkey"
 HMAC_FILE="./hmac"
@@ -29,11 +29,11 @@ fi
 # Project Owners. For proof of concept demo purposes lets use ./config.yaml
 # and ./plugins.yaml from this repo.
 #
-if [ "${HOOK_CONFIG}" != "" ]; then
+if [ "${HOOK_CONFIG}" == "" ]; then
     echo "${HOOK_CONFIG}" > ./config.yaml
 fi
 
-if [ "${PLUGIN_CONFIG}" != "" ]; then
+if [ "${PLUGIN_CONFIG}" == "" ]; then
     echo "${PLUGIN_CONFIG}" > ./plugins.yaml
 fi
 

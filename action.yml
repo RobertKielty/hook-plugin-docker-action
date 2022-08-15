@@ -8,7 +8,7 @@ inputs:
   gh-app-id:
     description: "Github App Id for hook"
     required: true
-  gh-app-id-pivate-key:
+  gh-app-pk:
     description: "Github App Private Key for hook"
     required: true
   plugin:
@@ -33,7 +33,7 @@ runs:
   args:
     - ${{ inputs.hmac }}
     - ${{ inputs.gh-app-id }}
-    - ${{ inputs.gh-app-id-private-key-path }}
+    - ${{ inputs.gh-app-pk }}
     - ${{ inputs.plugin }}
-    - ${{ inputs.plugin-to-run }}
-    - ${{ inputs.plugin-to-run }}
+    - ${{ inputs.hook-config }}
+    - ${{ inputs.plugin-config }}
