@@ -13,8 +13,8 @@ PLUGIN="$4"
 HOOK_CONFIG="$5"
 PLUGIN_CONFIG="$5"
 
-declare -r PKEY_FILE="./pkey"
-declare -r HMAC_FILE="./hmac"
+PKEY_FILE="./pkey"
+HMAC_FILE="./hmac"
 
 if [ "${HMAC}" != "" ]; then
     echo "${HMAC}" > "${HMAC_FILE}"
