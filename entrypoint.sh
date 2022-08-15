@@ -29,13 +29,22 @@ fi
 # Project Owners. For proof of concept demo purposes lets use ./config.yaml
 # and ./plugins.yaml from this repo.
 #
-if [ "${HOOK_CONFIG}" == "" ]; then
+if [ "${HOOK_CONFIG}" != "" ]; then
     echo "${HOOK_CONFIG}" > ./config.yaml
 fi
 
-if [ "${PLUGIN_CONFIG}" == "" ]; then
+if [ "${PLUGIN_CONFIG}" != "" ]; then
     echo "${PLUGIN_CONFIG}" > ./plugins.yaml
 fi
+
+
+echo " /ko-app/hook \
+    --hmac-secret-file "${HMAC_FILE}" \
+    --github-app-id "${GH_APP_ID}"  \
+    --github-app-private-key-path "${GH_APP_PK}" \
+    --config-path "${HOOK_CONFIG}" \
+    --plugin-config "${PLUGIN_CONFIG}" \
+    --dry-run=false"
 
 /ko-app/hook \
     --hmac-secret-file "${HMAC_FILE}" \
