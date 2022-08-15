@@ -1,18 +1,41 @@
-# Hook docker action
+# Hook Plugin Docker Action
 
-This action launches a hook instance with builtin plugins
+Github Action that launches a Prow Plugins using a custom buld of hook.
+For more information on Prow Plugins see
+
+https://github.com/kubernetes/test-infra/blob/master/prow/plugins/README.md#plugins
+
+This action launches a hook instance with builtin Prow plugins so that the following Prow
+Plugins can be started with out maintaining a running Prow instance :
+
+Hook contains the following bulit in plugins:
+For a list of Prow Plugins that are linked into hook see
+
+https://github.com/kubernetes/test-infra/blob/master/prow/hook/plugin-imports/plugin-imports.go#L22
 
 ## Inputs
 
+**Required**
+
 ## `hmac`
-token used by GitHub for validating webhooks
+Token sent along with GitHub event data to ensure that the sender is valid
 
-**Required**
+## `gh-app-id`
+App id created for hook.
 
-## `private-key`
-RSA private key and app id created for the GitHub App.
+## `gh-app-id-private-key`
+RSA private key created for hook gh app.
 
-**Required**
+**Optional**
+
+## `plugin`
+Name of plugin to use
+
+## `hook-config`
+Custom hook configuration file. Defaults to [./config.yaml](./config.yaml) in this repo
+
+## `plugin-config`
+Custom plugin configuration file. Defaults to [./plugins.yaml](./plugins.yaml) in this repo
 
 ## Outputs
 
