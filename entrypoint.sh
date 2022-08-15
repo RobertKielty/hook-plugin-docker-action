@@ -39,7 +39,7 @@ fi
 
 /ko-app/hook \
     --hmac-secret-file "${HMAC_FILE}" \
-    --github-app-id "${GH_APP_ID}  \
+    --github-app-id "${GH_APP_ID}"  \
     --github-app-private-key-path "${GH_APP_PK}" \
     --config-path "${HOOK_CONFIG}" \
     --plugin-config "${PLUGIN_CONFIG}" \
